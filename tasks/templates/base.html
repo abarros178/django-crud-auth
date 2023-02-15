@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>    
+    <title>Título de la WEB</title>    
+    <meta charset="UTF-8">
+    <meta name="title" content="Título de la WEB">
+    <meta name="description" content="Descripción de la WEB">    
+    <link href="estilos.css" rel="stylesheet">    
+</head>  
+<body>    
+    <nav>
+        <ul>
+            <li>
+                <a href="/"> home</a>
+            </li>
+          
+            {% if user.is_authenticated %}
+            
+            <li>
+                <a href="/tasks/"> Tasks</a>
+            </li>
+            <li>
+                <a href="/tasks/create/"> Crear tarea</a>
+            </li>
+            <li>
+                <a href="/logout/"> Logout</a>
+            </li>
+            
+            {% else %}
+            <li>
+                <a href="/singup/"> Singup</a>
+            </li>
+            <li>
+                <a href="/singin/"> Singin</a>
+            </li>
+            {% endif %}
+           
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>  
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block content %}
+<form action="/tasks/create/" method="POST">
+{% csrf_token %}
+{{error}}
+{{form.as_p}}
+<button>
+Crear
+</button>
+
+</form>
+{% endblock content %}

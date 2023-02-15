@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>{{tarea.titulo}}</h1>
+<form method="POST">
+    {% csrf_token %}
+{{form.as_p}}
+<button>
+    update
+</button>
+
+</form>
+
+ <Form action="{% url 'delete_task' tarea.id %}" method='POST'>
+    {% csrf_token %}
+    <button>
+        Delete
+    </button>
+ </Form>   
+
+{% endblock content %}
